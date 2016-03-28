@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/Event/etc/events.xsd">
+    <event name="customer_register_success">
+        <observer name="ktpl_seller_customer_register_success" instance="Ktpl\Seller\Model\Observer" method="sellerconvert" />
+    </event>
+    <event name="catalog_controller_product_view">
+        <observer name="ktpl_seller_customer_view" instance="Ktpl\Seller\Model\Observer" method="qrcodecheck" />
+    </event>
+</config>

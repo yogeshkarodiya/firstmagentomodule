@@ -1,0 +1,64 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+
+<form class="form contact"
+      action="<?php echo $block->getFormAction(); ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?php echo __('* Required Fields') ?>"
+      data-mage-init='{"validation":{}}'
+      enctype="multipart/form-data">
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?php echo __('Seller Information') ?></span></legend><br />
+        <div class="field firstname required">
+            <label class="label" for="firstname"><span><?php echo __('First Name') ?></span></label>
+            <div class="control">
+                <input name="firstname" id="firstname" title="<?php echo __('First Name') ?>" value="" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field lastname required">
+            <label class="label" for="lastname"><span><?php echo __('Last Name') ?></span></label>
+            <div class="control">
+                <input name="lastname" id="lastname" title="<?php echo __('Last Name') ?>" value="" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span><?php echo __('Email') ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?php echo __('Email') ?>" value="" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+        <div class="field telephone">
+            <label class="label" for="telephone"><span><?php echo __('Phone Number') ?></span></label>
+            <div class="control">
+                <input name="telephone" id="telephone" title="<?php echo __('Phone Number') ?>" value="" class="input-text" type="text" />
+            </div>
+        </div>
+        <div class="field city">
+            <label class="label" for="city"><span><?php echo __('City') ?></span></label>
+            <div class="control">
+                <input name="city" id="city" title="<?php echo __('City') ?>" value="" class="input-text" type="text" />
+            </div>
+        </div>
+        <div class="field image">
+            <label class="label" for="image"><span><?php echo __('Image') ?></span></label>
+            <div class="control">
+                <input type="file" name="imagename" id="imagename">
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="<?php echo __('Submit') ?>" class="action submit primary">
+                <span><?php echo __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+</form>

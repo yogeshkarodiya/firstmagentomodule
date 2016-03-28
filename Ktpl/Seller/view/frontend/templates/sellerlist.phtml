@@ -1,0 +1,45 @@
+<?php
+$sellerColl = $block->getSellerColl();
+
+?>
+<div>
+    <button class="action add" title="Add Seller" onclick="window.location.replace('<?php echo $block->getUrl('seller/index/index'); ?>')">
+     <span><?php echo __('Add') ?></span>
+</button>
+</div>
+<table class="cart items data table">
+    <thead>
+        <tr>
+            <th><?php echo __('Seller Id') ?></th>
+            <th><?php echo __('First Name') ?></th>
+            <th><?php echo __('Last Name') ?></th>
+            <th><?php echo __('Email') ?></th>
+            <th><?php echo __('Telephone') ?></th>
+            <th><?php echo __('City') ?></th>
+            <th><?php echo __('Image') ?></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+            <?php foreach ($sellerColl as $key => $sellervalue) {
+                ?>
+                <tr>
+                     <td><?php echo $sellervalue["id"] ?></td>
+                     <td><?php echo $sellervalue["firstname"] ?></td>
+                     <td><?php echo $sellervalue["lastname"] ?></td>
+                     <td><?php echo $sellervalue["email"] ?></td>
+                     <td><?php echo $sellervalue["telephone"] ?></td>
+                     <td><?php echo $sellervalue["city"] ?></td>
+                     <td><a href="<?php echo $block->getImage($sellervalue["imagename"]) ?>" data-lightbox="image-<?php echo $sellervalue["id"]; ?>"><img width="100" height="100" src="<?php echo $block->getImage($sellervalue["imagename"]) ?>"/></a></td>
+                     
+                </tr>
+                <?php
+                }
+                ?>
+    </tbody>
+</table>
+<script type="text/javascript">
+   require(['jquery','lightbox'],function($){
+    });
+</script>
