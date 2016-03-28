@@ -14,5 +14,11 @@
         "files": [
             "registration.php"
         ]
-    }
+    },
+    "repositories": [
+   {
+     "type": "vcs",
+     "url": "https://bitbucket.org/yogeshkarodiya/gitmagento"
+   }
+ ]
 }
